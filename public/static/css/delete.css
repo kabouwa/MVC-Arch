@@ -1,0 +1,67 @@
+.delete-box{
+    background: var(--card);
+    border: var(--border);
+    border-radius: var(--radius-2);
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.delete-header h2{
+    margin-bottom: 8px;
+    color: var(--text);
+}
+
+.delete-header p{
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+/* ACTIONS */
+.delete-actions{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* BUTTON BASE */
+.btn{
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: var(--radius-2);
+    font-size: 0.9rem;
+    transition: 0.2s ease;
+    display: inline-block;
+}
+
+/* CANCEL */
+.btn.cancel{
+    background: #e9edff;
+    color: var(--primary);
+    border: 1px solid #cfd6ff;
+}
+
+.btn.cancel:hover{
+    background: var(--primary);
+    color: white;
+}
+
+/* DELETE */
+.btn.delete{
+    background: #ffe9ee;
+    color: #ff4f7b;
+    border: 1px solid #ffc2d1;
+}
+
+.btn.delete:hover{
+    background: #ff4f7b;
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 500px){
+    .delete-actions{
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,105 @@
+.students-table{
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    border: var(--border);
+    border-radius: var(--radius-2);
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* HEADER */
+.students-table thead{
+    background: var(--primary);
+    color: white;
+}
+
+.students-table th{
+    padding: 12px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* CELLS */
+.students-table td{
+    text-align: center;
+    padding: 12px;
+    border-bottom: var(--border);
+    color: var(--text);
+}
+
+/* ROW HOVER (FIXED - NO SCALE BUG) */
+.students-table tbody tr{
+    transition: background 0.2s ease;
+}
+
+.students-table tbody tr:hover td{
+    background: var(--primary-soft);
+}
+
+/* TITLE */
+.table-header{
+    margin-bottom: 15px;
+}
+
+.table-header h2{
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.table-header p{
+    margin: 3px 0 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* BUTTON BASE */
+td a{
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: 0.2s ease;
+    position: relative;
+    z-index: 2;
+}
+
+/* UPDATE BUTTON */
+td a[href*="update"]{
+    background: #e9edff;
+    color: #4B6BFB;
+    border: 1px solid #cfd6ff;
+}
+
+td a[href*="update"]:hover{
+    background: #4B6BFB;
+    color: white;
+}
+
+/* DELETE BUTTON */
+td a[href*="delete"]{
+    background: #ffe9ee;
+    color: #ff4f7b;
+    border: 1px solid #ffc2d1;
+}
+
+td a[href*="delete"]:hover{
+    background: #ff4f7b;
+    color: white;
+}
+.profile-picture{
+    width: 45px;
+    border-radius: 22px;
+}
+/* RESPONSIVE */
+@media (max-width: 768px){
+    .students-table{
+        font-size: 0.85rem;
+    }
+
+    .students-table th,
+    .students-table td{
+        padding: 8px;
+    }
+}
