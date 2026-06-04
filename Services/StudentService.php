@@ -24,7 +24,10 @@ function validateStudent() : array{
     if($data['age'] < 0 || $data['age'] > 100){
         $data['errors'][] = "Invalid age.";
     }
-    if( $students_db->isExist("firstNameStud",$data['firstname']) && $students_db->isExist("lastNameStud",$data['lastname']) ){
+    if( $students_db->isExist([
+            "firstNameStud" => $data['firstname'],
+            "lastNameStud" =>$data['lastname']
+        ]) ){
         $data['errors'][] = "Student already exists.";
     }
     return $data;
