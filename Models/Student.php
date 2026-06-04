@@ -75,7 +75,7 @@ class StudentDB{
                 " LIMIT 1";
         $cursor = $this->conn->prepare($query);
         $cursor->execute($values);
-        return (bool) $cursor->fetch() !== false;
+        return $cursor->fetch() !== false;
     }
 }
 ?>
