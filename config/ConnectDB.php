@@ -2,7 +2,7 @@
 //Load Environement variable from .env
 foreach(file(__DIR__."/.env", FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES) as $line){
     $env_var = trim($line);
-    if(str_starts_with('#',$env_var))continue;
+    if(str_starts_with($env_var,'#'))continue;
     putenv($env_var);
 }
 //Get env variable into array
