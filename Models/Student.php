@@ -63,13 +63,19 @@ class StudentDB{
         return ($cursor->rowCount() > 0) ? true : false ;
     }
     //More utilities
-    public function isExist(string $col, $val) : bool{
-        $query = "SELECT * FROM {$this->tableName}
-                WHERE LOWER($col) = LOWER(?)";
+    public function isExist(array $data) : bool{
+        $values = [];
+        $parts = [];
+        foreach($data as $col => $val){
+            $parts[] = "LOWER($col) = LOWER(?)";
+            $values[] = $val;
+        }
+        $query = "SELECT 1 FROM {$this->tableName}
+                WHERE " . implode(" AND ",$parts) . 
+                " LIMIT 1";
         $cursor = $this->conn->prepare($query);
-        $cursor->execute([$val]);
-        $result = $cursor->fetch();
-        return !empty($result);
+        $cursor->execute($values);
+        return (bool) $cursor->fetch() !== false;
     }
 }
 ?>
